@@ -1,0 +1,17 @@
+<!-- person-item.component.html -->
+<div class="person-item">
+  <div class="person-item__label">ID:</div>
+  <div class="person-item__info">{{ person.id }}</div>
+  <div class="person-item__label">Name:</div>
+  <div class="person-item__info">{{ person.name }}</div>
+  <div class="person-item__label">Age:</div>
+  <div class="person-item__info">{{ person.age }}</div>
+  <div class="person-item__label">Gender:</div>
+  <div class="person-item__info">{{ person.gender }}</div>
+  <div class="person-item__label">Mobile:</div>
+  <div class="person-item__info">{{ person.mobile }}</div>
+  <div class="person-item__actions">
+    <button class="edit-button" (click)="editPerson()">Edit</button>
+    <button class="delete-button" (click)="deletePerson()">Delete</button>
+  </div>
+</div>

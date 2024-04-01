@@ -1,0 +1,51 @@
+<!-- edit-person.component.html -->
+<div class="edit-person">
+  <label for="personId">ID:</label>
+  <button disabled id="personId">{{ person.id }}</button>
+  <label for="personName">Name:</label>
+  <input
+    type="text"
+    id="personName"
+    name="name"
+    [(ngModel)]="person.name"
+    placeholder="Name"
+    required
+  />
+  <label for="personAge">Age:</label>
+  <input
+    type="number"
+    id="personAge"
+    name="age"
+    [(ngModel)]="person.age"
+    placeholder="Age"
+    required
+  />
+  <label for="personGender">Gender:</label>
+  <div class="form-group">
+    <label for="gender">Gender:</label>
+    <select
+      id="gender"
+      name="gender"
+      [(ngModel)]="person.gender"
+      required
+      class="custom-select"
+    >
+      <option value="preferNotToSay">Prefer not to Say</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="others">Others</option>
+    </select>
+  </div>
+
+  <label for="personMobile">Mobile:</label>
+  <input
+    type="number"
+    id="personMobile"
+    name="mobile"
+    [(ngModel)]="person.mobile"
+    placeholder="Mobile"
+    required
+  />
+  <button (click)="saveChanges()">Save</button>
+  <button (click)="cancelEdit()">Cancel</button>
+</div>

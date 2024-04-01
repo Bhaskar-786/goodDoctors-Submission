@@ -1,0 +1,58 @@
+.person-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.form-group input {
+  width: calc(100% - 10px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.person-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.person-list li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.person-list li:last-child {
+  margin-bottom: 0;
+}
+
+.custom-select {
+  /* Add your custom styling here */
+  width: 200px; /* Example width */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

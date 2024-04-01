@@ -1,0 +1,76 @@
+<div>
+  <h2>Add Person</h2>
+  <form class="person-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="name"
+        placeholder="Enter name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input
+        type="number"
+        id="age"
+        name="age"
+        [(ngModel)]="age"
+        placeholder="Enter age"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select
+        id="gender"
+        name="gender"
+        [(ngModel)]="gender"
+        required
+        class="custom-select"
+      >
+        <option value="preferNotToSay">Prefer not to Say</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="others">Others</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="mobile">Mobile:</label>
+      <input
+        type="number"
+        id="mobile"
+        name="mobile"
+        [(ngModel)]="mobile"
+        placeholder="Enter mobile"
+        required
+      />
+    </div>
+    <button type="submit">Add</button>
+  </form>
+  <br /><br />
+  <h2>Person List</h2>
+  <ul class="person-list">
+    <li *ngFor="let person of personService.persons">
+      <ng-container *ngIf="!personService.getEditPerson(person.id)">
+        <person-item
+          [person]="person"
+          (edit)="personService.editPerson($event)"
+          (delete)="personService.deletePerson($event)"
+        ></person-item>
+      </ng-container>
+
+      <ng-container *ngIf="personService.getEditPerson(person.id)">
+        <edit-person
+          [person]="person"
+          (save)="personService.updatePerson($event)"
+          (cancel)="cancelEdit($event)"
+        ></edit-person>
+      </ng-container>
+    </li>
+  </ul>
+</div>
